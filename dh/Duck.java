@@ -30,10 +30,10 @@ public class Duck extends Application {
 
 	Bird[] ducks = new Bird[4];
 
-			ducks[0] = new Bird(100, 400, "tinky.png");
-			ducks[1] = new Bird(100, 300,"dipsy.png");
-			ducks[2] = new Bird(100, 200, "lala.png");
-			ducks[3] = new Bird(100, 100, "po.png");
+			ducks[0] = new Bird(Math.random()* 200 + 600, Math.random() * 600 + 600, "tinky.png");
+			ducks[1] = new Bird(Math.random()* 200 + 400, Math.random() * 600 + 400,"dipsy.png");
+			ducks[2] = new Bird(Math.random()* 200 + 200, Math.random() * 600 + 700, "lala.png");
+			ducks[3] = new Bird(Math.random()* 200, Math.random() *600 + 200, "po.png");
 
 
 			for(int i = 0; i < ducks.length; i++) {

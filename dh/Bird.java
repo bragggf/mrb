@@ -5,12 +5,25 @@ import javafx.scene.paint.*;
 
 public class Bird extends Group {
 	private Rectangle duck;
+	int x;
+	int y;
 
-	public Bird(double x, double y, String filename) {
+	public Bird(double anX, double aY, String filename) {
+		x = (int)anX;
+		y = (int)aY;
 		setTranslateX(x);
-		setTranslateY(y);
+		//setTranslateY(y);
 
-		duck = new Rectangle(4.6, 7.5);
+		//EventHandler<MouseEvent> myHandler = new EventHandler<MouseEvent>() {
+		//			public void handle(MouseEvent e) {
+		//				dead();
+		//			}
+		//};
+
+		//public void dead() {
+
+
+		duck = new Rectangle(46, 75);
 
 		Image img = new Image("file:"+filename);
 		ImagePattern pat = new ImagePattern(img);
@@ -20,11 +33,16 @@ public class Bird extends Group {
 	}
 
 	public void moveUp() {
-		duck.setTranslateX(-duck.getWidth() / 2);
-		duck.setTranslateY(-duck.getHeight() / 2);
+		//duck.setTranslateX(-duck.getWidth() + 10 );
+		//duck.setTranslateY(-duck.getHeight() + 10);
+		y -= 7;
+		duck.setTranslateY(y);
 		System.out.println(duck.getHeight());
-	}
 
+		if (y < -800){
+			y = (int)(Math.random() * 800);
+		}
+	}
 
 
 }
